@@ -1,0 +1,136 @@
+.custom-form {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-form label {
+    font-weight: bold;
+}
+
+.custom-form select,
+.custom-form input[type="text"],
+.custom-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.custom-form select:focus,
+.custom-form input[type="text"]:focus,
+.custom-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.custom-form button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(206, 81, 9);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-form button[type="submit"]:hover {
+    background-color: rgb(250, 204, 118);
+
+}
+
+.centered-button {
+    display: flex;
+    justify-content: center;
+  }
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(206, 81, 9);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.custom-button:hover {
+    background-color: rgb(250, 204, 118);
+}
+
+.custom-button:focus {
+    outline: none;
+}
+
+.custom-button:active {
+    transform: translateY(1px);
+}
+
+.custom-select {
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.custom-select option:first-child {
+    color: #888;
+}
+
+.custom-select:focus {
+    outline: none;
+}
+
+
+.custom-select::after {
+    content: '\25BC';
+    position: absolute;
+    top: calc(50% - 8px);
+    right: 10px;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.navbar-brand img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+    text-align: center;
+    background-color: transparent;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: rgb(10, 10, 10);
+  }
+  
+  .footer-text {
+    font-weight: bold;
+  }
+
+  thead th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #343a40;
+    color: #fff;
+}
+h1 {
+    display: inline-block;
+    font-size: 1.5em;
+}
