@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <title>Tareas de Mantenimiento</title>
   <link rel="icon" href="http://192.168.80.8/eco9/mant.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/style.css" />
-</head>  
+</head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,24 +26,23 @@
     </div>
   </nav>
 
-    <div class="container mt-4 custom-form">
-      <form id="miFormulario" action="/guardar-en-excel" method="post" onsubmit="return validateForm();">
-        <!-- Campo de texto con el ID único asignado automáticamente y no editable -->
-        <div class="form-group">
-          <label for="formID">ID:</label>
-          <input type="text" class="form-control" id="formID" name="formID" readonly />
-        </div>
+  <div class="container mt-4 custom-form">
+    <form id="miFormulario" action="/guardar-en-excel" method="post" onsubmit="return validateForm();">
+      <div class="form-group">
+        <label for="formID">ID:</label>
+        <input type="text" class="form-control" id="formID" name="formID" readonly />
+      </div>
 
-        <div class="row">
-          <div class="col-md-3">
-            <label for="fecha">FECHA</label>
-            <input type="date" class="form-control" id="fecha" name="fecha" required />
-          </div>
-          <div class="col-md-3">
-            <label for="horaComienzo">HORA COMIENZO</label>
-            <input type="time" class="form-control" id="horaComienzo" name="hora_comienzo" required />
-          </div>
-          <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <label for="fecha">FECHA</label>
+          <input type="date" class="form-control" id="fecha" name="fecha" required />
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <label for="horaComienzo">HORA COMIENZO</label>
+          <input type="time" class="form-control" id="horaComienzo" name="hora_comienzo" required />
+        </div>
+        <div class="col-md-6 col-lg-3">
             <label for="modulo">MODULO</label>
             <select class="form-control custom-select" id="modulo" name="modulo" required>
               <option disabled selected>Seleccionar...</option>
@@ -104,7 +103,7 @@
               <option value="VO 02">VO 02</option>
             </select>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-6 col-lg-3">
             <label for="piso">PISO</label>
             <select class="form-control custom-select" id="piso" name="piso" required>
               <option disabled selected>Seleccionar...</option>
@@ -298,10 +297,10 @@
 
         <div class="row mt-3 my-4 py-4">
           <div class="col-md-6 text-center">
-            <button type="submit">Enviar</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
           </div>
           <div class="col-md-6 text-center">
-            <button type="button" class="custom-button" onclick="resetForm()">Limpiar</button>
+            <button type="button" class="btn btn-secondary" onclick="resetForm()">Limpiar</button>
           </div>
         </div>
       </form>
@@ -315,14 +314,14 @@
         form.reset();
         resetValidation();
       }
-    
+  
       function resetValidation() {
         const fields = document.querySelectorAll('.form-control');
         fields.forEach((field) => {
           field.classList.remove('is-invalid');
         });
       }
-    
+  
       function validateForm() {
         const requiredFields = [
           'fecha',
@@ -338,11 +337,11 @@
           'solicitado',
           'personal',
           'equipo',
-          'local' 
+          'local'
         ];
-    
+  
         let isValid = true;
-    
+  
         requiredFields.forEach((fieldId) => {
           const field = document.getElementById(fieldId);
           if (!field.value.trim()) {
@@ -352,7 +351,7 @@
             field.classList.remove('is-invalid');
           }
         });
-    
+  
         const fechaField = document.getElementById('fecha');
         const fechaSeleccionada = new Date(fechaField.value);
         const fechaActual = new Date();
@@ -362,30 +361,29 @@
         } else {
           fechaField.classList.remove('is-invalid');
         }
-    
-        const selectFields = document.querySelectorAll('select'); // Seleccionamos todos los elementos select
+  
+        const selectFields = document.querySelectorAll('select');
         selectFields.forEach((select) => {
-          if (select.value === 'Seleccionar...') { // Comprobamos si el valor seleccionado es el predeterminado
+          if (select.value === 'Seleccionar...') {
             isValid = false;
             select.classList.add('is-invalid');
           } else {
             select.classList.remove('is-invalid');
           }
         });
-    
+  
         if (!isValid) {
           alert('Por favor, complete todos los campos obligatorios.');
           return false;
         }
-    
+  
         return true;
       }
     </script>
-    
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </div>
-</body>
-
-</html>
+  </body>
+  
+  </html>
