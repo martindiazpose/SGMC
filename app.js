@@ -22,7 +22,7 @@ app.post('/guardar-excel', (req, res) => {
 
     const responseHTML = `
     <p>Datos guardados en el archivo Excel.</p>
-    <p><a href="http://192.168.80.8:3000/">Volver a comenzar</a></p>
+    <p><a href="./planilla.xlsx">Volver a comenzar</a></p>
 `;
 
 res.send(responseHTML);
