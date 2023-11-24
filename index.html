@@ -29,7 +29,6 @@
         <label for="formID">ID:</label>
         <input type="text" class="form-control" id="formID" name="formID" readonly />
       </div>
-
       <div class="row">
         <div class="col-md-6 col-lg-3">
           <label for="fecha">FECHA</label>
@@ -51,7 +50,6 @@
               <option value="Sector C">Sector C</option>
               <option value="Sector D">Sector D</option>
               <option value="Imagenologia">Imagenologia</option>
-
             </select>
           </div>
           <div class="col-md-6 col-lg-3">
@@ -67,7 +65,6 @@
             </select>
           </div>
         </div>
-
         <div class="row mt-3">
           <div class="col-md-3">
             <label for="fechaCierre">FECHA CIERRE</label>
@@ -82,7 +79,6 @@
             <input type="text" class="form-control" id="local" name="local" required />
           </div>
         </div>
-
         <div class="row mt-3">
           <div class="col-md-3">
             <label for="disciplina">DISCIPLINA</label>
@@ -119,7 +115,6 @@
             </select>
           </div>
         </div>
-
         <div class="row mt-3">
           <div class="col-md-6">
             <label for="nombreElemento">NOMBRE DEL ELEMENTO</label>
@@ -139,7 +134,6 @@
             </select>
           </div>
         </div>
-
         <div class="row mt-3">
           <div class="col-md-6">
             <label for="personal">PERSONAL</label>
@@ -223,9 +217,7 @@
           'equipo',
           'local'
         ];
-  
         let isValid = true;
-  
         requiredFields.forEach((fieldId) => {
           const field = document.getElementById(fieldId);
           if (!field.value.trim()) {
@@ -235,7 +227,6 @@
             field.classList.remove('is-invalid');
           }
         });
-  
         const fechaField = document.getElementById('fecha');
         const fechaSeleccionada = new Date(fechaField.value);
         const fechaActual = new Date();
@@ -245,7 +236,6 @@
         } else {
           fechaField.classList.remove('is-invalid');
         }
-  
         const selectFields = document.querySelectorAll('select');
         selectFields.forEach((select) => {
           if (select.value === 'Seleccionar...') {
@@ -255,16 +245,13 @@
             select.classList.remove('is-invalid');
           }
         });
-  
         if (!isValid) {
           alert('Por favor, complete todos los campos obligatorios.');
           return false;
         }
-  
         return true;
       }
     </script>
-  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
